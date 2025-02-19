@@ -48,15 +48,25 @@
         <p>Here is where I play around with code.</p>
         <p>Here is a link to my <a href="index.html">home page</a>.</p>
       </section>
-      <section class="relative h-[400vh]">
+      <section class="relative h-[200vh]">
         <div class="sticky top-12">
           <div
-            class="video-strech-wrapper h-[calc(100vh-96px)] w-full overflow-hidden"
+            class="video-strech-wrapper relative h-[calc(100vh+96px)] w-full overflow-hidden"
           >
-            <picture class="h-full w-full">
+            <div
+              class="video-strech-copy px-18 absolute z-40 flex h-full flex-col items-center justify-center gap-3.5 text-white"
+            >
+              <h2 class="text-xl font-bold">Apps</h2>
+              <p
+                class="text-center text-4xl font-bold leading-8 tracking-tight"
+              >
+                Votre bureau n’a plus de limites. Vos apps non plus.
+              </p>
+            </div>
+            <picture class="h-full w-full brightness-50">
               <img
                 src="assets/pictures/section-fundations-2.jpg"
-                class="h-full w-full max-w-[unset] object-cover object-top"
+                class="no-reset h-full w-full object-cover object-top"
                 alt=""
               />
             </picture>
@@ -101,5 +111,6 @@
       </section>
       <section class="h-[200vh] bg-cyan-100"></section>
     </main>
+    <script src="src/js/script.js"></script>
   </body>
 </html>
