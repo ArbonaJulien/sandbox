@@ -14,38 +14,92 @@
     <title>Document</title>
   </head>
   <body class="relative">
-    <nav class="flex justify-between">
-      <a
-        href="#"
-        class="flex h-12 items-center justify-center bg-[#1d1d1d] px-4 text-lg font-bold uppercase text-white"
-        >Logo</a
-      >
-      <ul class="flex items-center gap-2">
-        <li><a href="#" class="flex h-12 items-center">Home</a></li>
-        <li><a href="#" class="flex h-12 items-center">About</a></li>
-        <li><a href="#" class="flex h-12 items-center pr-4">Contact</a></li>
-      </ul>
-    </nav>
-    <nav
-      class="sticky top-0 flex h-12 justify-between bg-[#fafafccc] bg-opacity-80 px-4 backdrop-blur-[2px]"
-    >
-      <a href="#" class="flex items-center text-lg font-semibold"
-        >Our products</a
-      >
-      <div class="flex items-center">
-        <button
-          class="rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold leading-none text-white"
+    <header class="sticky -top-12 z-50">
+      <nav class="flex justify-between">
+        <a
+          href="#"
+          class="flex h-12 items-center justify-center bg-[#1d1d1d] px-4 text-lg font-bold uppercase text-white"
+          >Logo</a
         >
-          Buy now
-        </button>
-      </div>
-    </nav>
-    <main class="h-[200vh] bg-cyan-100 py-10">
-      <section class="px-4">
+        <ul class="flex items-center gap-2">
+          <li><a href="#" class="flex h-12 items-center">Home</a></li>
+          <li><a href="#" class="flex h-12 items-center">About</a></li>
+          <li><a href="#" class="flex h-12 items-center pr-4">Contact</a></li>
+        </ul>
+      </nav>
+      <nav
+        class="sticky top-0 flex h-12 justify-between bg-[#fafafccc] bg-opacity-80 px-4 backdrop-blur-[2px]"
+      >
+        <a href="#" class="flex items-center text-lg font-semibold"
+          >Our products</a
+        >
+        <div class="flex items-center">
+          <button
+            class="rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold leading-none text-white"
+          >
+            Buy now
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main class="">
+      <section class="px-4 py-10">
         <h1 class="text-xl font-semibold">My Sandbox</h1>
         <p>Here is where I play around with code.</p>
         <p>Here is a link to my <a href="index.html">home page</a>.</p>
       </section>
+      <section class="relative h-[400vh]">
+        <div class="sticky top-12">
+          <div
+            class="video-strech-wrapper h-[calc(100vh-96px)] w-full overflow-hidden"
+          >
+            <picture class="h-full w-full">
+              <img
+                src="assets/pictures/section-fundations-2.jpg"
+                class="h-full w-full max-w-[unset] object-cover object-top"
+                alt=""
+              />
+            </picture>
+          </div>
+          <div class="px-18 flex flex-col pb-8 pt-12">
+            <h3 class="mb-5 text-xl font-bold text-[#1d1d1d]">
+              Les apps s’invitent dans votre espace.
+            </h3>
+            <p class="text-lg font-semibold text-[#86868B]">
+              Avec l’Apple Vision Pro, vous disposez d’un espace illimité qui
+              transforme la façon dont vous utilisez vos apps préférées.
+              Organisez vos apps comme bon vous semble, redimensionnez-les à la
+              taille idéale pour que l’espace de travail dont vous rêvez
+              devienne réalité, et restez toujours en contact avec le monde qui
+              vous entoure. Parcourez le Web dans Safari, créez une liste de
+              tâches dans Notes, échangez dans Messages et passez facilement
+              d’une app à l’autre d’un simple regard. Vous pouvez même faire
+              entrer vos projets sur Mac dans l’Apple Vision Pro sans fil grâce
+              à l’écran virtuel du Mac.
+            </p>
+            <div class="mt-8 flex justify-center">
+              <a
+                href="#"
+                class="flex w-fit items-center gap-1 rounded-full bg-[#ff5a00] px-5 py-2 text-sm font-semibold text-white hover:bg-[#fa8b50e6]"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#fff"
+                >
+                  <path
+                    d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
+                  />
+                </svg>
+                En savoir plus sur les apps
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="h-[200vh] bg-cyan-100"></section>
     </main>
   </body>
 </html>
