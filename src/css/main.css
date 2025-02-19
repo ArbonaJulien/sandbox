@@ -69,4 +69,12 @@ html {
 
 .video-strech-wrapper {
   display: block;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  /* Force l'accélération matérielle */
+  will-change: transform;
 }/*# sourceMappingURL=main.css.map */
