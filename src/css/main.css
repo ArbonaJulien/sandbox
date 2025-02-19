@@ -3,7 +3,6 @@
 main.scss
 
 */
-@import url(_reset.scss);
 .dev-line {
   position: fixed;
   top: 50%;
