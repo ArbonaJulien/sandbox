@@ -67,10 +67,11 @@
     }
 
     window.addEventListener("scroll", () => {
-      requestAnimationFrame(updateVideoHeight);
+      //requestAnimationFrame(updateVideoHeight);
+      updateVideoHeight();
     });
 
     // Initial height
-    updateVideoHeight();
+    //updateVideoHeight();
   });
 })();
