@@ -78,3 +78,11 @@ html {
   /* Force l'accélération matérielle */
   will-change: transform;
 }/*# sourceMappingURL=main.css.map */
+
+.video-strech-wrapper picture {
+  /* Force l'accélération matérielle pour les filtres */
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  /* Optimise les performances des filtres */
+  will-change: filter;
+}
