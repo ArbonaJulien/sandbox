@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     /* Définition de la scroll timeline.
-       Certains navigateurs (comme Safari sur iOS) pourraient nécessiter le préfixe -webkit- */
+       Certains navigateurs (comme Safari sur iOS) pourraient nécessiter le préfixe -webkit- 
     @scroll-timeline myScroll {
       scroll-offsets: 0% 100%;
       source: auto;
@@ -17,7 +17,7 @@
          source: auto;
          orientation: block;
        }
-    
+    */
 
     .image {
       display: block;
@@ -26,9 +26,9 @@
       object-fit: cover;
       /* L’animation ajuste la hauteur en fonction du scroll via la timeline définie */
       animation: resizeImage 1s linear forwards;
-      animation-timeline: myScroll;
-      /* Pour Safari, vous pourrez avoir besoin de :
-         -webkit-animation-timeline: myScroll; */
+      animation-timeline: scroll();
+      /* Pour Safari, vous pourrez avoir besoin de : */
+         -webkit-animation-timeline: scroll();
     }
 
     @keyframes resizeImage {
