@@ -79,7 +79,7 @@
       // Utiliser scaleY au lieu de height
       const scale = Math.max(0.3, 1 - scrollProgress);
       videoWrapper.style.transform = `scaleY(${scale})`;
-      }
+      //}
     }
 
     window.addEventListener("scroll", () => {
