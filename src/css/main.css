@@ -67,22 +67,11 @@ html {
   pointer-events: none; /* Pour éviter d'interférer avec les interactions de l'utilisateur */
 }
 
+:root {
+  --image-height: calc(100vh);
+}
+
 .video-strech-wrapper {
   display: block;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  perspective: 1000;
-  /* Force l'accélération matérielle */
-  will-change: transform;
+  height: var(--image-height);
 }/*# sourceMappingURL=main.css.map */
-
-.video-strech-wrapper picture {
-  /* Force l'accélération matérielle pour les filtres */
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  /* Optimise les performances des filtres */
-  will-change: filter;
-}
