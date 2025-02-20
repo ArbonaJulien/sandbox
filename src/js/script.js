@@ -29,52 +29,60 @@
     image.style.filter = `brightness(${brightness})`;
   }
 
+  let scrollY = window.scrollY;
+
+  function updateImageHeigth() {
+    const pictureContainer = document.querySelector(".picture-container");
+    if (pictureContainer === null) return;
+
+    const containerParent = pictureContainer.parentElement;
+    const pictureContainerRect = pictureContainer.getBoundingClientRect();
+    const parentRect = containerParent.getBoundingClientRect();
+    const headerHeight = 48; // Hauteur du header
+
+    // Vérifie si on a dépassé le haut du parent en scrollant vers le haut
+    const isAboveParent = parentRect.top >= headerHeight;
+    const reachedBottom = pictureContainerRect.bottom > parentRect.bottom - 1;
+
+    // console.log(reachedBottom);
+    if (reachedBottom) {
+      if (pictureContainerRect.top <= headerHeight) {
+        pictureContainer.style.position = "absolute";
+        pictureContainer.style.bottom = 0;
+        pictureContainer.style.top = "auto";
+      } else {
+        pictureContainer.style.position = "relative";
+        pictureContainer.style.top = "0";
+        pictureContainer.style.bottom = "auto";
+        pictureContainer.style.width = "auto";
+      }
+    } else {
+      if (pictureContainerRect.top <= headerHeight && !isAboveParent) {
+        // Fixer l'élément en haut seulement si on n'est pas remonté au-dessus du parent
+        pictureContainer.style.position = "fixed";
+        pictureContainer.style.top = `${headerHeight}px`;
+        pictureContainer.style.bottom = "auto";
+        pictureContainer.style.width = "100%";
+      } else {
+        // Revenir à la position normale
+        pictureContainer.style.position = "relative";
+        pictureContainer.style.top = "0";
+        pictureContainer.style.bottom = "auto";
+        pictureContainer.style.width = "auto";
+      }
+    }
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     // Code à exécuter une fois que le DOM est entièrement chargé
 
     document.addEventListener("scroll", function () {
       const image = document.querySelector(".scroll-container img");
       darkenImage(image);
+
+      updateImageHeigth();
+
+      scrollY = window.scrollY;
     });
-
-    function updateVideoHeight() {
-      const videoWrapper = document.querySelector(".video-strech-wrapper");
-      const rect = videoWrapper.getBoundingClientRect();
-      const picture = document.querySelector(".video-strech-wrapper picture");
-      const copy = document.querySelector(".video-strech-copy");
-      // console.log(rect.bottom, window.innerHeight);
-      if (rect.top < 49) {
-        const scrollProgress = Math.max(
-          0,
-          Math.min(1, (window.scrollY - rect.top) / (window.innerHeight + 110)),
-        );
-        const targetHeight = Math.max(
-          300,
-          (window.innerHeight + 110) * (1 - scrollProgress),
-        );
-
-        const targetBrightness = Math.max(0.5, Math.min(scrollProgress, 1));
-        // console.log(targetBrightness);
-        picture.style.filter = `brightness(${targetBrightness})`;
-
-        console.log(scrollProgress);
-        // L'opacité diminue linéairement de 1 à 0
-        const targetOpacity = Math.max(0, 1 - (scrollProgress - 0.16) * 3);
-        copy.style.opacity = targetOpacity;
-
-        // videoWrapper.style.height = `${targetHeight}px`;
-        document.documentElement.style.setProperty(
-          "--image-height",
-          targetHeight + "px",
-        );
-      }
-    }
-
-    window.addEventListener("scroll", () => {
-      requestAnimationFrame(updateVideoHeight);
-    });
-
-    // Initial height
-    updateVideoHeight();
   });
 })();
