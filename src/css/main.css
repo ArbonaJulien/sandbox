@@ -38,7 +38,7 @@ img:not(.no-reset) {
 
 /* 6. Supprimer les bordures des éléments de formulaire */
 input,
-button,
+button:not(.no-reset),
 textarea,
 select {
   font: inherit;
@@ -65,13 +65,4 @@ html {
   background-color: crimson;
   z-index: 9999;
   pointer-events: none; /* Pour éviter d'interférer avec les interactions de l'utilisateur */
-}
-
-:root {
-  --image-height: calc(100vh);
-}
-
-.video-strech-wrapper {
-  display: block;
-  height: var(--image-height);
 }/*# sourceMappingURL=main.css.map */
