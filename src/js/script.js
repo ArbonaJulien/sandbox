@@ -43,7 +43,6 @@
       const picture = document.querySelector(".video-strech-wrapper picture");
       const copy = document.querySelector(".video-strech-copy");
       // console.log(rect.bottom, window.innerHeight);
-      /*
       if (rect.top < 49) {
         const scrollProgress = Math.max(
           0,
@@ -64,30 +63,18 @@
         copy.style.opacity = targetOpacity;
 
         // videoWrapper.style.height = `${targetHeight}px`;
-
-        const scrollProgress = Math.max(
-        0,
-        Math.min(1, (window.scrollY - rect.top) / (window.innerHeight + 110)),
-      );
-
-        */
-
-      const scrollProgress = Math.max(
-        0,
-        Math.min(1, (window.scrollY - rect.top) / (window.innerHeight + 110)),
-      );
-      // Utiliser scaleY au lieu de height
-      const scale = Math.max(0.3, 1 - scrollProgress);
-      videoWrapper.style.transform = `scaleY(${scale})`;
-      //}
+        document.documentElement.style.setProperty(
+          "--image-height",
+          targetHeight + "px",
+        );
+      }
     }
 
     window.addEventListener("scroll", () => {
-      //requestAnimationFrame(updateVideoHeight);
-      updateVideoHeight();
+      requestAnimationFrame(updateVideoHeight);
     });
 
     // Initial height
-    //updateVideoHeight();
+    updateVideoHeight();
   });
 })();
