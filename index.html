@@ -1,55 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    #container {
-      height: 200vh;
-    }
-    #square {
-  background-color: deeppink;
-  width: 100px;
-  height: 100px;
-  margin-top: 100px;
-  position: absolute;
-  bottom: 0;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #container {
+        height: 200vh;
+      }
+      #square {
+        background-color: deeppink;
+        width: 100px;
+        height: 100px;
+        margin-top: 100px;
+        position: absolute;
+        bottom: 0;
 
-  animation-name: rotateAnimation;
-  animation-duration: 1ms; /* Firefox requires this to apply the animation */
-  animation-direction: alternate;
-  animation-timeline: myScroll;
-      -webkit-animation-timeline: myScroll;
-}
+        animation-name: rotateAnimation;
+        animation-duration: 1ms; /* Firefox requires this to apply the animation */
+        animation-direction: alternate;
+        animation-timeline: myScroll;
+        -webkit-animation-timeline: myScroll;
+      }
 
-@keyframes rotateAnimation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+      @keyframes rotateAnimation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
 
-    /* Syntaxe standard */
-@scroll-timeline myScroll {
-  scroll-offsets: 0% 100%;
-  source: auto;
-  orientation: block;
-}
+      /* Syntaxe standard */
+      @scroll-timeline myScroll {
+        scroll-offsets: 0% 100%;
+        source: auto;
+        orientation: block;
+      }
 
-/* Pour Safari */
-@-webkit-scroll-timeline myScroll {
-  scroll-offsets: 0% 100%;
-  source: auto;
-  orientation: block;
-}
-  </style>
-</head>
-<body>
-  <div id="container">
-  <div id="square"></div>
-  <div id="stretcher"></div>
-</div>
-</body>
+      /* Pour Safari */
+      @-webkit-scroll-timeline myScroll {
+        scroll-offsets: 0% 100%;
+        source: auto;
+        orientation: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="square"></div>
+      <div id="stretcher"></div>
+    </div>
+  </body>
 </html>
