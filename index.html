@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/css/main.css" />
-    <title>Document</title>
+    <title>SandBox-Fixed</title>
   </head>
   <body class="relative">
     <header class="sticky -top-12 z-50">
@@ -35,7 +35,7 @@
         >
         <div class="flex items-center">
           <button
-            class="rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold leading-none text-white"
+            class="no-reset rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold leading-none text-white"
           >
             Buy now
           </button>
@@ -43,71 +43,28 @@
       </nav>
     </header>
     <main class="">
-      <section class="px-4 py-10">
-        <h1 class="text-xl font-semibold">My Sandbox</h1>
-        <p>Here is where I play around with code.</p>
-        <p>Here is a link to my <a href="index.html">home page</a>.</p>
+      <section class="text-[#1d1d1d]">
+        <div class="intro-copy flex flex-col items-center px-4 py-10">
+          <h1 class="text-center text-2xl font-bold">This is a little intro</h1>
+          <p class="text-center text-lg font-semibold opacity-80">
+            A few words to present my beautiful product.
+          </p>
+        </div>
       </section>
-      <section class="relative h-[200vh]">
-        <div class="top-12">
-          <div class="video-strech-wrapper relative w-full overflow-hidden">
-            <div
-              class="video-strech-copy px-18 absolute z-40 flex h-full flex-col items-center justify-center gap-3.5 text-white"
-            >
-              <h2 class="text-xl font-bold">Apps</h2>
-              <p
-                class="text-center text-4xl font-bold leading-8 tracking-tight"
-              >
-                Votre bureau n’a plus de limites. Vos apps non plus.
-              </p>
-            </div>
-            <picture class="h-full w-full brightness-50">
+      <section class="relative h-[calc(100vh-48px)] bg-violet-200">
+        <div class="scroll-container h-full">
+          <div class="picture-container">
+            <picture class="">
               <img
                 src="assets/pictures/section-fundations-2.jpg"
-                class="no-reset h-full w-full object-cover object-top"
                 alt=""
+                class="no-reset h-full w-full max-w-[unset] object-cover object-center"
               />
             </picture>
           </div>
-          <div class="px-18 flex flex-col pb-8 pt-12">
-            <h3 class="mb-5 text-xl font-bold text-[#1d1d1d]">
-              Les apps s’invitent dans votre espace.
-            </h3>
-            <p class="text-lg font-semibold text-[#86868B]">
-              Avec l’Apple Vision Pro, vous disposez d’un espace illimité qui
-              transforme la façon dont vous utilisez vos apps préférées.
-              Organisez vos apps comme bon vous semble, redimensionnez-les à la
-              taille idéale pour que l’espace de travail dont vous rêvez
-              devienne réalité, et restez toujours en contact avec le monde qui
-              vous entoure. Parcourez le Web dans Safari, créez une liste de
-              tâches dans Notes, échangez dans Messages et passez facilement
-              d’une app à l’autre d’un simple regard. Vous pouvez même faire
-              entrer vos projets sur Mac dans l’Apple Vision Pro sans fil grâce
-              à l’écran virtuel du Mac.
-            </p>
-            <div class="mt-8 flex justify-center">
-              <a
-                href="#"
-                class="flex w-fit items-center gap-1 rounded-full bg-[#ff5a00] px-5 py-2 text-sm font-semibold text-white hover:bg-[#fa8b50e6]"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#fff"
-                >
-                  <path
-                    d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
-                  />
-                </svg>
-                En savoir plus sur les apps
-              </a>
-            </div>
-          </div>
         </div>
       </section>
-      <section class="h-[200vh] bg-cyan-100"></section>
+      <section class="h-[300vh] bg-green-100"></section>
     </main>
     <script src="src/js/script.js"></script>
   </body>
