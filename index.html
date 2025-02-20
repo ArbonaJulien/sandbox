@@ -18,7 +18,7 @@
   animation-name: rotateAnimation;
   animation-duration: 1ms; /* Firefox requires this to apply the animation */
   animation-direction: alternate;
-  animation-timeline: scroll(block nearest);
+  animation-timeline: myScroll;
 }
 
 @keyframes rotateAnimation {
@@ -28,6 +28,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+    /* Syntaxe standard */
+@scroll-timeline myScroll {
+  scroll-offsets: 0% 100%;
+  source: auto;
+  orientation: block;
+}
+
+/* Pour Safari */
+@-webkit-scroll-timeline myScroll {
+  scroll-offsets: 0% 100%;
+  source: auto;
+  orientation: block;
 }
   </style>
 </head>
