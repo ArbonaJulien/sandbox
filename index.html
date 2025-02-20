@@ -4,24 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+      /* Le conteneur qui permet le scroll */
       #container {
         height: 200vh;
+        position: relative; /* Pour que l'absolu de #square soit relatif au conteneur */
       }
+      /* L'élément animé */
       #square {
         background-color: deeppink;
         width: 100px;
         height: 100px;
-        margin-top: 100px;
         position: absolute;
         bottom: 0;
-
-        animation-name: rotateAnimation;
-        animation-duration: 1ms; /* Firefox requires this to apply the animation */
-        animation-direction: alternate;
+        left: calc(50% - 50px); /* Centrage horizontal */
+        
+        /* La durée minimale (1ms) est requise sur Firefox pour déclencher l'animation */
+        animation: rotateAnimation 1ms linear forwards alternate;
         animation-timeline: myScroll;
         -webkit-animation-timeline: myScroll;
       }
 
+      /* Animation de rotation */
       @keyframes rotateAnimation {
         from {
           transform: rotate(0deg);
@@ -31,14 +34,14 @@
         }
       }
 
-      /* Syntaxe standard */
+      /* Définition de la scroll timeline selon la syntaxe standard */
       @scroll-timeline myScroll {
         scroll-offsets: 0% 100%;
         source: auto;
         orientation: block;
       }
 
-      /* Pour Safari */
+      /* Définition pour Safari avec le préfixe -webkit- */
       @-webkit-scroll-timeline myScroll {
         scroll-offsets: 0% 100%;
         source: auto;
@@ -49,7 +52,6 @@
   <body>
     <div id="container">
       <div id="square"></div>
-      <div id="stretcher"></div>
     </div>
   </body>
 </html>
