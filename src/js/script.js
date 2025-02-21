@@ -73,16 +73,40 @@
     }
   }
 
+  function updateImageScale() {
+    const image = document.querySelector(".foundation-picture");
+    const scrollContainer = document.querySelector(".scroll-container");
+    const headerHeight = 48; // Hauteur du header
+    if (image === null || scrollContainer === null) return;
+
+    // update image scale by ratio defined on scroll
+    const imageRect = image.getBoundingClientRect();
+    const scrollContainerRect = scrollContainer.getBoundingClientRect();
+    const scrollPosition = window.scrollY;
+
+    const scrollProgress =
+      (scrollPosition +
+        headerHeight -
+        document.documentElement.scrollTop -
+        scrollContainerRect.top) /
+      (scrollContainerRect.height - 260);
+
+    const ratio = Math.min(Math.max(scrollProgress, 0), 1);
+    const scale = 1 + 1 - ratio;
+    document.querySelector(".foundation-picture img").style.transform =
+      `scale(${scale})`;
+    console.log(ratio);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     // Code à exécuter une fois que le DOM est entièrement chargé
+    // document.addEventListener("scroll", function () {
+    //   const image = document.querySelector(".scroll-container img");
+    //   darkenImage(image);
+    // });
 
     document.addEventListener("scroll", function () {
-      const image = document.querySelector(".scroll-container img");
-      darkenImage(image);
-
-      updateImageHeigth();
-
-      scrollY = window.scrollY;
+      updateImageScale();
     });
   });
 })();
