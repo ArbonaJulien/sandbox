@@ -29,7 +29,7 @@
     image.style.filter = `brightness(${brightness})`;
   }
 
-  function minimizePicture() {
+  function minimizePicture(picture) {
     // if (!CSS.supports("animation-timeline: scroll()")) {
     //   const picture = document.querySelector(".picture");
     //   if (picture === null) return;
@@ -41,15 +41,17 @@
     //     picture.classList.remove("minimize");
     //   }
     // }
-    const picture = document.querySelector(".picture");
-    if (picture === null) return;
 
-    const pictureRect = picture.getBoundingClientRect();
-    console.log(pictureRect.top);
-    if (pictureRect.top < 49) {
-      picture.classList.add("minimized");
-    } else {
-      picture.classList.remove("minimized");
+    if (!CSS.supports("animation-timeline: scroll()")) {
+      if (picture === null) return;
+
+      const pictureRect = picture.getBoundingClientRect();
+      console.log(pictureRect.top);
+      if (pictureRect.top < 49) {
+        picture.classList.add("minimized");
+      } else {
+        picture.classList.remove("minimized");
+      }
     }
   }
 
@@ -61,7 +63,8 @@
     // });
 
     document.addEventListener("scroll", function () {
-      minimizePicture();
+      const picture = document.querySelector(".picture");
+      minimizePicture(picture);
     });
   });
 })();
