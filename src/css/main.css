@@ -71,7 +71,7 @@ html {
   height: calc(100vh - 48px);
   animation: heightAnimation 1ms ease-in;
   animation-timeline: view();
-  background: url("../../assets/pictures/section-fundation.jpg") no-repeat center center;
+  background: url("../../assets/pictures/section-fundations-2.jpg") no-repeat center center;
   background-size: cover;
 }
 
