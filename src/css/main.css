@@ -69,6 +69,7 @@ html {
 
 .picture {
   scroll-snap-align: start;
+  scroll-snap-stop: always;
   height: calc(100vh - 48px);
   background: url("../../assets/pictures/section-fundation.jpg") no-repeat center center;
   background-size: cover;
@@ -80,6 +81,7 @@ html {
 
 .scroll-container {
   scroll-snap-type: y mandatory;
+  scroll-padding-top: 48px;
   height: 200vh;
   transition: height 0.5s ease-in 0s;
 }
