@@ -69,23 +69,10 @@ html {
 
 .picture {
   height: calc(100vh - 48px);
-  animation: heightAnimation 1ms ease-in;
-  animation-timeline: view();
-  background: url("../../assets/pictures/section-fundations-2.jpg") no-repeat center center;
+  background: url("../../assets/pictures/section-fundation.jpg") no-repeat center center;
   background-size: cover;
+  transition: height 0.5s;
 }
-
-@keyframes heightAnimation {
-  from {
-    height: calc(100vh - 48px);
-  }
-  50% {
-    height: calc(100vh - 48px);
-  }
-  80% {
-    height: 260px;
-  }
-  to {
-    height: 260px;
-  }
+.picture.minimized {
+  height: 260px;
 }/*# sourceMappingURL=main.css.map */
