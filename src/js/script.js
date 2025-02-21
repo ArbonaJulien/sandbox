@@ -31,74 +31,23 @@
 
   let scrollY = window.scrollY;
 
-  function updateImageHeigth() {
-    const pictureContainer = document.querySelector(".picture-container");
-    if (pictureContainer === null) return;
+  function minimizePicture() {
+    if (!CSS.supports("animation-timeline: scroll()")) {
+      const picture = document.querySelector(".picture");
+      if (picture === null) return;
 
-    const containerParent = pictureContainer.parentElement;
-    const pictureContainerRect = pictureContainer.getBoundingClientRect();
-    const parentRect = containerParent.getBoundingClientRect();
-    const headerHeight = 48; // Hauteur du header
-
-    // Vérifie si on a dépassé le haut du parent en scrollant vers le haut
-    const isAboveParent = parentRect.top >= headerHeight;
-    const reachedBottom = pictureContainerRect.bottom > parentRect.bottom - 1;
-
-    // console.log(reachedBottom);
-    if (reachedBottom) {
-      if (pictureContainerRect.top <= headerHeight) {
-        pictureContainer.style.position = "absolute";
-        pictureContainer.style.bottom = 0;
-        pictureContainer.style.top = "auto";
+      const pictureRect = picture.getBoundingClientRect();
+      if (pictureRect.top < 49) {
+        picture.classList.add("minimize");
       } else {
-        pictureContainer.style.position = "relative";
-        pictureContainer.style.top = "0";
-        pictureContainer.style.bottom = "auto";
-        pictureContainer.style.width = "auto";
-      }
-    } else {
-      if (pictureContainerRect.top <= headerHeight && !isAboveParent) {
-        // Fixer l'élément en haut seulement si on n'est pas remonté au-dessus du parent
-        pictureContainer.style.position = "fixed";
-        pictureContainer.style.top = `${headerHeight}px`;
-        pictureContainer.style.bottom = "auto";
-        pictureContainer.style.width = "100%";
-      } else {
-        // Revenir à la position normale
-        pictureContainer.style.position = "relative";
-        pictureContainer.style.top = "0";
-        pictureContainer.style.bottom = "auto";
-        pictureContainer.style.width = "auto";
+        picture.classList.remove("minimize");
       }
     }
   }
+  function updateImageHeigth() {
+    const picture = document.querySelector(".picture");
 
-  function updateImageScale() {
-    const image = document.querySelector(".foundation-picture");
-    const scrollContainer = document.querySelector(".scroll-container");
-    const headerHeight = 48; // Hauteur du header
-    if (image === null || scrollContainer === null) return;
-
-    // update image scale by ratio defined on scroll
-    const imageRect = image.getBoundingClientRect();
-    const scrollContainerRect = scrollContainer.getBoundingClientRect();
-    const scrollPosition = window.scrollY;
-
-    const scrollProgress =
-      (scrollPosition +
-        headerHeight -
-        document.documentElement.scrollTop -
-        scrollContainerRect.top) /
-      (scrollContainerRect.height - 260);
-
-    const ratio = Math.min(Math.max(scrollProgress, 0), 1);
-    // let scale = 2 + 1 - Math.pow(2, ratio);
-    // scale = Math.min(Math.max(scale, 1), 3);
-
-    const scale = 3.5 - 2.5 * ratio;
-    document.querySelector(".foundation-picture img").style.transform =
-      `scale(${scale})`;
-    console.log(ratio);
+    if (picture === null) return;
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -107,9 +56,8 @@
     //   const image = document.querySelector(".scroll-container img");
     //   darkenImage(image);
     // });
-
     document.addEventListener("scroll", function () {
-      updateImageScale();
+      minimizePicture();
     });
   });
 })();
