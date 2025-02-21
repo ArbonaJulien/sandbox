@@ -1,60 +1,9 @@
-@charset "UTF-8";
 /*
 main.scss
 
 */
-/* 1. Supprimer les marges et paddings par défaut */
-* {
-  box-sizing: border-box;
-}
 
-/* 2. Uniformiser le comportement du texte */
-body {
-  font-size: 16px;
-  font-family: "Urbanist", serif;
-  line-height: 1.4;
-  text-rendering: optimizeSpeed;
-  background-color: #fff;
-  color: #333;
-}
-
-/* 3. Supprimer la décoration des liens */
-a {
-  text-decoration: none;
-}
-
-/* 4. Uniformiser les listes (enlever les styles par défaut) */
-ul,
-ol {
-  list-style: none;
-}
-
-/* 5. Forcer les images à ne jamais dépasser leur conteneur */
-img:not(.no-reset) {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* 6. Supprimer les bordures des éléments de formulaire */
-input,
-button:not(.no-reset),
-textarea,
-select {
-  font: inherit;
-  border: none;
-  background: none;
-}
-
-/* 7. Corriger les boutons pour qu'ils héritent du curseur */
-button {
-  cursor: pointer;
-}
-
-/* 8. Rendre les animations et transitions plus fluides */
-html {
-  scroll-behavior: smooth;
-}
+@import "reset";
 
 .dev-line {
   position: fixed;
@@ -65,4 +14,28 @@ html {
   background-color: crimson;
   z-index: 9999;
   pointer-events: none; /* Pour éviter d'interférer avec les interactions de l'utilisateur */
-}/*# sourceMappingURL=main.css.map */
+}
+
+.picture {
+  height: calc(100vh - 48px);
+  animation: heightAnimation 1ms ease-in;
+  animation-timeline: view();
+  background: url("../../assets/pictures/section-fundation.jpg") no-repeat
+    center center;
+  background-size: cover;
+}
+
+@keyframes heightAnimation {
+  from {
+    height: calc(100vh - 48px);
+  }
+  50% {
+    height: calc(100vh - 48px);
+  }
+  80% {
+    height: 260px;
+  }
+  to {
+    height: 260px;
+  }
+}
