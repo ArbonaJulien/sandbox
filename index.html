@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/css/main.css" />
-    <title>SandBox-Fixed</title>
+    <title>SandBox-Final</title>
   </head>
   <body class="relative">
     <header class="sticky -top-12 z-50 border-b-2 border-orange-400">
@@ -51,31 +51,36 @@
           </p>
         </div>
       </section>
-      <section class="section-foundation relative bg-violet-200">
-        <div
-          class="scroll-container relative flex h-[calc(100vh+100px)] flex-col justify-between bg-violet-300"
-        >
-          <div class="sticky-element sticky top-12 bg-orange-200">
-            <div class="foundation-picture overflow-x-clip bg-orange-400">
-              <picture class="h-full">
-                <img
-                  src="assets/pictures/section-fundations-2.jpg"
-                  alt=""
-                  class="no-reset h-[260px] w-full max-w-[unset] origin-top object-cover object-top"
-                />
-              </picture>
+      <section class="section-products bg-violet-200">
+        <div class="scroll-container relative h-[200vh]">
+          <div class="sticky-element sticky top-12">
+            <div class="picture bg-violet-400"></div>
+            <div class="products-copy px-4 py-10">
+              <h2 class="mb-4 text-center text-2xl font-bold">Our products</h2>
+              <p class="text text-center font-semibold opacity-80">
+                Discover the amazing features and benefits of our exclusive
+                products. Our range includes innovative solutions designed to
+                meet your needs and exceed your expectations. From cutting-edge
+                technology to unparalleled craftsmanship, each product is
+                meticulously crafted to deliver exceptional performance and
+                reliability. Experience the difference with our premium
+                offerings and elevate your lifestyle with the best in the
+                market.
+              </p>
+              <div class="mt-8 flex w-full justify-center">
+                <button
+                  class="no-reset rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold leading-none text-white"
+                >
+                  Buy now
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="foundation-copy bg-pink-200 px-4 py-10">
-          <h2 class="text-2xl font-bold">Our foundation</h2>
-          <p class="text-lg font-semibold opacity-80">
-            A few words to present our beautiful foundation.
-          </p>
         </div>
       </section>
       <section class="h-[300vh] bg-green-100"></section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="src/js/script.js"></script>
   </body>
 </html>
