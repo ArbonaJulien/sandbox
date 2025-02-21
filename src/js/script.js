@@ -92,7 +92,10 @@
       (scrollContainerRect.height - 260);
 
     const ratio = Math.min(Math.max(scrollProgress, 0), 1);
-    const scale = 1 + 1 - ratio;
+    // let scale = 2 + 1 - Math.pow(2, ratio);
+    // scale = Math.min(Math.max(scale, 1), 3);
+
+    const scale = 3.5 - 2.5 * ratio;
     document.querySelector(".foundation-picture img").style.transform =
       `scale(${scale})`;
     console.log(ratio);
