@@ -29,25 +29,28 @@
     image.style.filter = `brightness(${brightness})`;
   }
 
-  let scrollY = window.scrollY;
-
   function minimizePicture() {
-    if (!CSS.supports("animation-timeline: scroll()")) {
-      const picture = document.querySelector(".picture");
-      if (picture === null) return;
+    // if (!CSS.supports("animation-timeline: scroll()")) {
+    //   const picture = document.querySelector(".picture");
+    //   if (picture === null) return;
 
-      const pictureRect = picture.getBoundingClientRect();
-      if (pictureRect.top < 49) {
-        picture.classList.add("minimized");
-      } else {
-        picture.classList.remove("minimized");
-      }
-    }
-  }
-  function updateImageHeigth() {
+    //   const pictureRect = picture.getBoundingClientRect();
+    //   if (pictureRect.top < 49) {
+    //     picture.classList.add("minimize");
+    //   } else {
+    //     picture.classList.remove("minimize");
+    //   }
+    // }
     const picture = document.querySelector(".picture");
-
     if (picture === null) return;
+
+    const pictureRect = picture.getBoundingClientRect();
+    console.log(pictureRect.top);
+    if (pictureRect.top < 49) {
+      picture.classList.add("minimized");
+    } else {
+      picture.classList.remove("minimized");
+    }
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -56,6 +59,7 @@
     //   const image = document.querySelector(".scroll-container img");
     //   darkenImage(image);
     // });
+
     document.addEventListener("scroll", function () {
       minimizePicture();
     });
