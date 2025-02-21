@@ -68,6 +68,7 @@ html {
 }
 
 .picture {
+  scroll-snap-align: start;
   height: calc(100vh - 48px);
   background: url("../../assets/pictures/section-fundation.jpg") no-repeat center center;
   background-size: cover;
@@ -78,10 +79,32 @@ html {
 }
 
 .scroll-container {
+  scroll-snap-type: y mandatory;
   height: 200vh;
   transition: height 0.5s ease-in 0s;
 }
 .scroll-container:has(.picture.minimized) {
   height: 640px;
   transition: height 0.6s ease-in 0.3s;
+}
+
+@supports (animation-timeline: scroll()) {
+  .picture {
+    animation: heightAnimation 1ms ease-in;
+    animation-timeline: view();
+  }
+  @keyframes heightAnimation {
+    from {
+      height: calc(100vh - 48px);
+    }
+    60% {
+      height: calc(100vh - 48px);
+    }
+    80% {
+      height: 260px;
+    }
+    to {
+      height: 260px;
+    }
+  }
 }/*# sourceMappingURL=main.css.map */
