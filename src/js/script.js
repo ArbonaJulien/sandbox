@@ -38,9 +38,9 @@
 
       const pictureRect = picture.getBoundingClientRect();
       if (pictureRect.top < 49) {
-        picture.classList.add("minimize");
+        picture.classList.add("minimized");
       } else {
-        picture.classList.remove("minimize");
+        picture.classList.remove("minimized");
       }
     }
   }
