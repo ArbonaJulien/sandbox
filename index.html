@@ -1,95 +1,99 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Maname&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="src/css/main.css" />
-    <title>SandBox-Final</title>
+    <link rel="stylesheet" href="src/css/gsap.css" />
+    <title>Animation GSAP sur Scroll</title>
   </head>
-  <body class="relative">
-    <header class="sticky -top-12 z-50 border-b-2 border-orange-400">
-      <nav class="flex justify-between">
+  <body>
+    <header class="fixed z-50 w-full bg-white">
+      <nav class="flex items-center justify-between">
         <a
           href="#"
-          class="flex h-12 items-center justify-center bg-[#1d1d1d] px-4 text-lg font-bold uppercase text-white"
+          class="logo flex h-12 items-baseline pl-4 text-lg font-semibold"
           >Logo</a
         >
-        <ul class="flex items-center gap-2">
-          <li><a href="#" class="flex h-12 items-center">Home</a></li>
-          <li><a href="#" class="flex h-12 items-center">About</a></li>
-          <li><a href="#" class="flex h-12 items-center pr-4">Contact</a></li>
-        </ul>
-      </nav>
-      <nav
-        class="sticky top-0 flex h-12 justify-between bg-[#fafafccc] bg-opacity-80 px-4 backdrop-blur-[2px]"
-      >
-        <a href="#" class="flex items-center text-lg font-semibold"
-          >Our productsssssss</a
+        <button
+          class="flex h-12 w-8 flex-col items-end justify-center gap-1 pr-4"
         >
-        <div class="flex items-center">
-          <button
-            class="no-reset rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold leading-none text-white"
-          >
-            Buy now
-          </button>
-        </div>
+          <span class="flex h-[2px] w-3.5 rounded bg-gray-800"></span>
+          <span class="flex h-[2px] w-3.5 rounded bg-gray-800"></span>
+        </button>
       </nav>
     </header>
-    <main class="">
-      <section class="text-[#1d1d1d]">
-        <div class="intro-copy flex flex-col items-center px-4 py-10">
-          <h1 class="text-center text-2xl font-bold">This is a little intro</h1>
-          <p class="text-center text-lg font-semibold opacity-80">
-            A few words to present my beautiful product.
-          </p>
-        </div>
-      </section>
-      <section class="section-products bg-violet-200">
-        <div class="scroll-container relative">
-          <div class="sticky-element sticky top-12">
-            <div class="picture"></div>
-            <div class="products-copy px-4 py-10">
-              <h2 class="mb-4 text-center text-2xl font-bold">Our products</h2>
-              <p class="text text-center font-semibold opacity-80">
-                Discover the amazing features and benefits of our exclusive
-                products. Our range includes innovative solutions designed to
-                meet your needs and exceed your expectations. From cutting-edge
-                technology to unparalleled craftsmanship, each product is
-                meticulously crafted to deliver exceptional performance and
-                reliability. Experience the difference with our premium
-                offerings and elevate your lifestyle with the best in the
-                market.
-              </p>
-              <div class="mt-8 flex w-full justify-center">
-                <button
-                  class="no-reset rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold leading-none text-white"
-                >
-                  Buy now
-                </button>
-              </div>
+    <main class="h-[300vh]">
+      <section class="">
+        <div class="h-[calc(200vh)]">
+          <div
+            class="picture-wrapper relative h-[calc(100vh)] overflow-x-hidden"
+          >
+            <picture class="picture flex h-full brightness-50">
+              <img
+                src="https://r2.starryai.com/results/1044402673/ae91dcfd-eb2c-4204-aaf9-82ba10f529e2.webp"
+                alt=""
+                class="no-reset h-full w-full max-w-[unset] object-cover object-center"
+              />
+            </picture>
+            <div
+              class="copy absolute inset-x-0 bottom-[100px] flex flex-col items-center gap-2 px-8 text-white"
+            >
+              <h1 class="text-center text-2xl font-bold">
+                Amazing Journey into the Future
+              </h1>
+              <p>Discover the endless possibilities of tomorrow</p>
             </div>
           </div>
         </div>
       </section>
-      <section class="h-[300vh] bg-green-100">
-        <h2 class="pt-10 text-center text-3xl font-bold">
-          Explore Our Exceptional Services
-        </h2>
-        <p class="mt-4 text-center text-lg font-semibold opacity-80">
-          We offer a wide range of services tailored to meet your needs. Our
-          team of experts is dedicated to providing top-notch solutions that
-          ensure your satisfaction. From consulting to implementation, we are
-          here to help you achieve your goals with excellence and efficiency.
+      <section class="bg-orange-100 px-4 py-10">
+        <h2 class="text-xl font-semibold">Travel to innovation</h2>
+        <p>
+          Innovation in space travel has led to remarkable advancements in
+          technology, enabling deeper exploration of the cosmos, improved
+          spacecraft design, and the potential for human colonization of other
+          planets.
         </p>
       </section>
     </main>
-    <script src="src/js/script.js"></script>
+
+    <!-- Insertion des bibliothèques GSAP et ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js"></script>
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Création de la timeline
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".picture-wrapper",
+          // markers: true,
+          pin: true,
+          pinSpacing: false,
+          scrub: true,
+          start: "top top",
+          end: "+=100%",
+        },
+      });
+
+      // Ajout des animations à la timeline
+      tl.from(".picture", {
+        filter: "brightness(1)",
+        ease: Power1.easeOut,
+      })
+        .from(".copy", {
+          opacity: 0,
+          y: 20,
+        })
+        .to(".copy", {
+          x: "100%",
+        });
+    </script>
   </body>
 </html>
