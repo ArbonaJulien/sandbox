@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="src/css/main.css" />
-
     <title>Sticky Project</title>
   </head>
   <body class="relative">
@@ -91,7 +90,7 @@
               </picture>
             </div>
             <div class="copy-container absolute inset-0 flex flex-col items-center justify-center bg-black/80">
-              <div class="copy mb-6 flex flex-col items-center gap-4 px-36 text-lg font-semibold text-white">
+              <div class="copy mb-6 flex max-w-96 flex-col items-center gap-4 px-4 text-lg font-semibold text-white">
                 <p class="text-center">
                   L’Apple Vision Pro intègre les contenus numériques dans votre espace physique.
                 </p>
@@ -146,6 +145,44 @@
           </svg>
           Regarder de plus près
         </a>
+      </section>
+      <section>
+        <div class="step-2 scroll-container will-change-auto">
+          <div class="sticky-element relative">
+            <div class="picture-container h-[calc(100vh-48px)]">
+              <picture class="h-full">
+                <img
+                  src="https://www.apple.com/fr/apple-vision-pro/images/overview/experiences/connection/connection_startframe__dk2ju081ayqa_large.jpg"
+                  alt=""
+                  class="h-full object-cover object-center"
+                />
+              </picture>
+            </div>
+            <div class="copy-container absolute inset-0 flex flex-col items-center justify-center bg-black/80">
+              <div class="copy mb-6 flex flex-col items-center gap-4 px-36 text-lg font-semibold text-white">
+                <h2 class="text-xl">Connexion</h2>
+                <p class="text-center text-3xl">Vos idées se rejoignent. Et vous aussi.</p>
+                <a
+                  href="#"
+                  class="px-4.5 mt-4 flex gap-1 rounded-full border-2 border-[#ff5a00] py-2 font-semibold text-[#ff5a00]"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#ff5a00"
+                  >
+                    <path
+                      d="m380-300 280-180-280-180v360ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"
+                    />
+                  </svg>
+                  Regarder le film
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
