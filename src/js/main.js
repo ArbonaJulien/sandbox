@@ -72,13 +72,5 @@
     .from('.step-3 .picture-container', {
       duration: 1,
       height: '100vh',
-    })
-    .to(
-      '.step-3.after-copy',
-      {
-        duration: 1,
-        marginTop: '-160px',
-      },
-      '<'
-    );
+    });
 })();
