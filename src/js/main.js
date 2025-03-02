@@ -48,7 +48,6 @@
       start: 'top 48px',
       end: '+=500',
       scrub: 1,
-      pinSpacing: false,
     },
   });
 
